@@ -34,3 +34,11 @@ migrate-mongo down
 ```
 migrate-mongo status
 ```
+
+
+```
+await db.collection('tableName').updateMany({}, { $rename: { name: 'newName' } }, { multi: true }, function(err, blocks) {
+  if (err) { throw err; }
+  console.log('done!');
+});
+```
